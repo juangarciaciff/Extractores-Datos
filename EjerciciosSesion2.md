@@ -5,8 +5,8 @@
 ***
 - Autor: Juan A. García Cuevas
 - Fecha: 24/10/2016
-***
 
+***
 # Introducción
 
 **Flume**
@@ -255,7 +255,5 @@ hdfs dfs -cat /tmp/flume/events.1477214922357
 ***
 # Referencias
 - [https://gist.github.com/fjavieralba/6c81b856c3d6ed36b2c3](https://gist.github.com/fjavieralba/6c81b856c3d6ed36b2c3)
+
 ***
-
-
-

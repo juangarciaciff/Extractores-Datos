@@ -5,8 +5,8 @@
 ***
 - Autor: Juan A. García Cuevas
 - Fecha: 24/10/2016
-***
 
+***
 # Ejercicio 1: Ingesta básica en HDFS
 
 Tenemos un dataset en el directorio local /root/youtube/data que es el resultado (parcial) de un crawler de Youtube (extraído de [http://netsg.cs.sfu.ca/youtubedata/](http://netsg.cs.sfu.ca/youtubedata/)).
@@ -67,7 +67,7 @@ hadoop jar /usr/hdp/2.2.4.2-2/hadoop-mapreduce/hadoop-mapreduce-examples.jar
 ### 3. Ejecuta de nuevo el comando, esta vez indicando el programa a ejecutar (sort). Al ejecutarlo sin parámetros, se imprimirá una ayuda de sort, indicando qué parámetros requiere. Recuerda que queremos transformar desde el formato texto plano al formato SequenceFile. También tendrás que indicarle la ruta HDFS de los datos de entrada y la ruta HDFS de salida (/ciff/youtube/processed/mapreduce)
 
 ```bash
-hadoop jar /usr/hdp/2.2.4.2-2/hadoop-mapreduce/hadoop-mapreduce-examples.jar sort -inFormat   org.apache.hadoop.mapreduce.lib.input.TextInputFormat -outFormat org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat -outKey org.apache.hadoop.io.LongWritable -outValue org.apache.hadoop.io.Text "/ciff/youtube/rawdata/*" "/ciff/youtube/mergedData"
+hadoop jar /usr/hdp/2.2.4.2-2/hadoop-mapreduce/hadoop-mapreduce-examples.jar sort -inFormat org.apache.hadoop.mapreduce.lib.input.TextInputFormat -outFormat org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat -outKey org.apache.hadoop.io.LongWritable -outValue org.apache.hadoop.io.Text "/ciff/youtube/rawdata/*" "/ciff/youtube/mergedData"
 ```
 
 ![ExecuteMapReduceJobB1](images/s1/ExecuteMapReduceJobB1.png)
@@ -94,4 +94,5 @@ Pistas:
 ***
 # Referencias
 - [https://gist.github.com/fjavieralba/6c4020ffb311cd50f81a](https://gist.github.com/fjavieralba/6c4020ffb311cd50f81a)
+
 ***
