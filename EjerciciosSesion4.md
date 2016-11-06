@@ -25,7 +25,7 @@ Sqoop viene con una amplia documentación para usuarios y desarrolladores:
 
 ##Preparación del ejercicio##
 
-Para poder probar la herramienta necesitaremos tener acceso a una base de datos. Por ello, descargaremos de internet una base de datos de empleados y la importaremos en el servidoe MySql de la máquina virtual:
+Para poder probar la herramienta necesitaremos tener acceso a una base de datos. Por ello, descargaremos de internet una base de datos de empleados y la importaremos en el servidor MySql de la máquina virtual:
 
 ### 1. Iniciamos la máquina virtual y accedemos a ella (root/hadoop)
 
@@ -35,32 +35,27 @@ Iniciamos la máquina virtual de la asignatura, configurada previamente (extract
 
 Abrimos un terminal en nuestra máquina principal para conectarnos (mediante ssh) a la máquina virtual:
 ```bash
-ssh root@localhost -p 2222
+ssh root@localhost -p 2222 # pwd: hadoop
 ```
-NOTA: password: "hadoop"
 
 ### 2. Descargamos e instalamos la base de datos
 
-Descargar la BBDD de ejemplo
-
+Descargamos la BBDD de ejemplo:
 ```bash
 wget https://launchpad.net/test-db/employees-db-1/1.0.6/+download/employees_db-full-1.0.6.tar.bz2
 ```
 
-Descomprimirla y cargarla en MsSql
-
+La descomprimimos y cargarmos en MsSql:
 ```bash
 tar xjfv employees_db-full-1.0.6.tar.bz2
 cd employees_db
 mysql -t < employees.sql
 ```
 
-Dar permisos en MySql
-
+Damos permisos en MySql:
 ```bash
 mysql
 ```
-
 ```sql
 GRANT ALL PRIVILEGES ON employees.* TO ''@'localhost';
 quit
