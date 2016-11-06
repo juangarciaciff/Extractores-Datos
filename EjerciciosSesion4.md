@@ -4,7 +4,7 @@
 ***
 - Autor: **Juan A. García Cuevas**
 - Fecha: 06/11/2016
-- _Correspondiente a sesión 4_
+- _Correspondiente a la sesión 4_
 
 ***
 # Introducción
@@ -72,7 +72,7 @@ sqoop help
 ```
 ![ListDatabases](./images/s4/SqoopHelp.png)
 
-Listamos las bases de datos en el RDBMS (necesitamos indicar el driver JDBC con la opción --connect jdbc:mysql://localhost/employees):
+Listamos las bases de datos en el RDBMS (necesitamos indicar el driver JDBC con la opción **_--connect jdbc:mysql://localhost/employees**_):
 ```bash
 sqoop list-databases --connect jdbc:mysql://localhost/employees
 ```
@@ -90,7 +90,7 @@ sqoop list-tables --connect jdbc:mysql://localhost/employees
 
 **sqoop-import** es la herramienta utilizada para importar datos desde una BBDD a HDFS
 
-1. Revisar la ayuda del comando import, y ejecutar una importación de la tabla employees, utilizando un solo mapper. Comprobar que se han generado los datos (http://localhost:8000/filebrowser/view//user/root/employees/part-m-00000)
+1. Revisar la ayuda del comando import, y ejecutar una importación de la tabla employees, utilizando un solo mapper. Comprobar que se han generado los datos (**_http://localhost:8000/filebrowser/view//user/root/employees/part-m-00000_**)
 
 2. Importar ahora la misma tabla pero en el directorio HDFS /sqoop/full_table, utilizando 2 mappers y con los campos delimitados por tabulador (“\t”). Comprobar los ficheros generados en HDFS en el directorio destino (ahora debería haber 2 ficheros) y que el formato es diferente (tabuladores en vez de comas). Revisar el fichero employees.java que Sqoop ha generado automáticamente.
 
@@ -99,7 +99,7 @@ Mostramos la ayuda de la opción import del comando sqoop:
 sqoop help import
 ```
 
-Nos conectamos a la tabla employees de la base de datos employees con 1 map y copiamos los datos:
+Nos conectamos a la tabla employees de la base de datos employees con 1 map y copiamos los datos (por defecto -m es 4):
 ```bash
 sqoop import --connect jdbc:mysql://localhost/employees --table employees -m 1
 ```
@@ -109,7 +109,7 @@ sqoop import --connect jdbc:mysql://localhost/employees --table employees -m 1
 
 ![ConnectM1B](./images/s4/ConnectM1B.png)
 
-Nos conectamos a la tabla employees de la base de datos employees con 1 map y copiamos los datos en el fichero /sqoop/full_table de HDFS, separándolos con el caracter tabulador:
+Nos conectamos a la tabla employees de la base de datos employees con 1 map y copiamos los datos en el fichero **_/sqoop/full_table_** de HDFS, separándolos con el caracter tabulador:
 ```bash
 sqoop import --connect jdbc:mysql://localhost/employees --table employees -m 2 --fields-terminated-by "\t" --target-dir /sqoop/full_table
 ```
@@ -126,7 +126,7 @@ Si no queremos importar tablas completas, sqoop-import permite importar sólo al
 
 También es posible filtrar los datos de alguna añadiendo cláusulas WHERE al job de importación o incluso añadiendo una query arbitraria.
 
-Importamos sólo las columnas first_name y last_name en el directorio HDFS /sqoop/some_columns. Comprobamos que los ficheros generados en HDFS, verificando que sólo estén las columnas seleccionadas:
+Importamos sólo las columnas first_name y last_name en el directorio HDFS **_/sqoop/some_columns_**. Comprobamos que los ficheros generados en HDFS, verificando que sólo estén las columnas seleccionadas:
 /sqoop/some_columns de HDFS:
 ```bash
 sqoop import --connect jdbc:mysql://localhost/employees --table employees --columns first_name,last_name -m 2 --fields-terminated-by "\t" --target-dir /sqoop/some_columns
@@ -137,7 +137,7 @@ sqoop import --connect jdbc:mysql://localhost/employees --table employees --colu
 
 ![ConnectM3A2](./images/s4/ConnectM3A2.png)
 
-Importamos en /sqoop/recent_employees los empleados que tengan el campo emp_no mayor de 499948. Comprobamos que los ficheros de salida cumplen la condición del WHERE:
+Importamos en el fichero **_/sqoop/recent_employees_** los empleados que tengan el campo **_emp_no_** mayor de 499948. Comprobamos que los ficheros de salida cumplen la condición del WHERE:
 ```bash
 sqoop import --connect jdbc:mysql://localhost/employees --table employees --where "emp_no>499948" --fields-terminated-by "\t" --warehouse-dir /sqoop/recent_employees
 ```
@@ -149,9 +149,9 @@ sqoop import --connect jdbc:mysql://localhost/employees --table employees --wher
 
 # Ejercicio 4: Importación a Hive
 
-Borramos el contenido de /user/root/employees en HDFS (para que no interfiera con este ejercicio)
+Borramos el contenido de **_/user/root/employees_** en HDFS (para que no interfiera con este ejercicio).
 
-Ejecutamos una importación de todas las tablas directamente a Hive y comprobamos que los datos son accesibles desde Hive (http://localhost:8000/beeswax/), verificando que se van creando las tablas en la BD “default” (show tables;) y que se pueden hacer queries.
+Ejecutamos una importación de todas las tablas directamente a Hive y comprobamos que los datos son accesibles desde Hive (**_http://localhost:8000/beeswax/_**), verificando que se van creando las tablas en la BD “default” (show tables;) y que se pueden hacer queries.
 
 ```bash
 sqoop import-all-tables --connect jdbc:mysql://localhost/employees --hive-import --warehouse-dir /sqoop/hive
@@ -164,6 +164,11 @@ sqoop import-all-tables --connect jdbc:mysql://localhost/employees --hive-import
 
 ![ConnectM4A2](./images/s4/ConnectM4A2.png)
 
+![Hive1](./images/s4/Hive1.png)
+![Hive2](./images/s4/Hive2.png)
+
+![Hive3](./images/s4/Hive3.png)
+![Hive4](./images/s4/Hive4.png)
 
 ***
 ## Parámetros utilizados en los comandos sqoop

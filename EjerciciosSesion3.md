@@ -4,7 +4,7 @@
 ***
 - Autor: **Juan A. García Cuevas**
 - Fecha: 06/11/2016
-- _Correspondiente a sesión 3_
+- _Correspondiente a la sesión 3_
 
 ***
 # Introducción

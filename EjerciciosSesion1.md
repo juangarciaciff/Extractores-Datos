@@ -4,7 +4,7 @@
 ***
 - Autor: **Juan A. García Cuevas**
 - Fecha: 24/10/2016
-- _Correspondiente a sesión 1_
+- _Correspondiente a la sesión 1_
 
 ***
 # Ejercicio 1: Ingesta básica en HDFS
