@@ -31,7 +31,7 @@ cd /usr/hdp/current/kafka-broker/
 ./bin/kafka-server-start.sh config/server.properties
 ```
 
-** Abrimos una nueva consola para probar los demás comandos de kafka **
+**Abrimos una nueva consola para probar los demás comandos de kafka**
 ```bash
 ssh root@localhost -p 2222 # pwd: hadoop
 cd /usr/hdp/current/kafka-broker/
@@ -39,7 +39,7 @@ cd /usr/hdp/current/kafka-broker/
 
 ### Kafka incluye algunos scripts útiles para interactuar con el cluster. Por ejemplo, el script "_/usr/hdp/current/kafka-broker/bin/kafka-topics.sh_" se utiliza mucho, por ejemplo, para crear un topic.
 
-** Ejecutamos el script _kafka-topics.sh_ sin parámetros para que muestre todas las opciones que se le pueden pasar **
+**Ejecutamos el script _kafka-topics.sh_ sin parámetros para que muestre todas las opciones que se le pueden pasar**
 ```bash
 ./bin/kafka-topics.sh
 ```
@@ -47,19 +47,19 @@ cd /usr/hdp/current/kafka-broker/
 
 Podemos ver que la opción --zookeeper es obligatoria. En nuestro caso le pasaremos siempre **--zookeeper localhost:2181**
 
-** Creamos un topic denominado ciff1 con una sóla partición y con factor de replicación 1 **
+**Creamos un topic denominado ciff1 con una sóla partición y con factor de replicación 1**
 ```bash
 ./bin/kafka-topics.sh --zookeeper localhost:2181 --create localhost:2181 --topic ciff1 --partitions 1 --replication-factor 1
 ```
 ![KafkaCrearTopic](images/s3/KafkaCrearTopic.png)
 
-** Mostramos un listado de los topicos actuales **
+**Mostramos un listado de los topicos actuales**
 ```bash
 ./bin/kafka-topics.sh --zookeeper localhost:2181 --list
 ```
 ![KafkaListarTopics](images/s3/KafkaListarTopics.png)
 
-** Mostramos la descripción del tópico recién creado **
+**Mostramos la descripción del tópico recién creado**
 ```bash
 ./bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic ciff1
 ```
@@ -67,7 +67,7 @@ Podemos ver que la opción --zookeeper es obligatoria. En nuestro caso le pasare
 
 ### Kafka también incorpora algunos scripts útiles para producir y consumir mensajes del cluster.
 
-** Ejecutamos el script _kafka-producer.sh_ sin parámetros para que muestre todas las opciones que se le pueden pasar **
+**Ejecutamos el script _kafka-producer.sh_ sin parámetros para que muestre todas las opciones que se le pueden pasar**
 ```bash
 ./bin/kafka-producer.sh
 ```
@@ -75,7 +75,7 @@ Podemos ver que la opción --zookeeper es obligatoria. En nuestro caso le pasare
 
 Podemos ver que la opción --broker-list es obligatoria. En nuestro caso le pasaremos siempre --broker-list sandbox.hortonworks.com:6667
 
-** Iniciamos console producer y enviamos algunos mensajes al topic ciff1 **
+**Iniciamos console producer y enviamos algunos mensajes al topic ciff1**
 
 ```bash
 ./bin/kafka-console-producer.sh --broker-list sandbox.hortonworks.com:6667 --topic ciff1
@@ -84,7 +84,7 @@ Podemos ver que la opción --broker-list es obligatoria. En nuestro caso le pasa
 1- texto escrito antes de lanzar ningún consumer
 ```
 
-** Abrimos un consumer en una nueva consola para consumir los nuevos mensajes que se envíen **
+**Abrimos un consumer en una nueva consola para consumir los nuevos mensajes que se envíen**
 
 ```bash
 ssh root@localhost -p 2222 # pwd: hadoop
@@ -101,7 +101,7 @@ Ahora escribimos una nueva línea de texto en la consola del producer y vemos qu
 
 Comprobamos que en la consola del consumer aparece la línea recién escrita en el producer.
 
-** Abrimos un consumer en una nueva consola para consumir todos los mensaje, incluso los anteriores **
+**Abrimos un consumer en una nueva consola para consumir todos los mensaje, incluso los anteriores**
 
 ```bash
 ssh root@localhost -p 2222 # pwd: hadoop
