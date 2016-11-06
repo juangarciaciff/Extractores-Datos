@@ -175,7 +175,7 @@ Consultamos el conenido de una de las tablas importadas en Hive:
 ![Hive4](./images/s4/Hive4.png)
 
 ***
-## Parámetros utilizados en los comandos sqoop
+## ANEXO: Algunos parámetros utilizados en los comandos sqoop de este documento
 
 - Url de la base de datos: **--connect jdbc:mysql://localhost/employees**
 - Nombre de la tabla: **--table employees**
