@@ -164,8 +164,12 @@ sqoop import-all-tables --connect jdbc:mysql://localhost/employees --hive-import
 
 ![ConnectM4A2](./images/s4/ConnectM4A2.png)
 
+Consultamos las tablas importadas en Hive:
+
 ![Hive1](./images/s4/Hive1.png)
 ![Hive2](./images/s4/Hive2.png)
+
+Consultamos el conenido de una de las tablas importadas en Hive:
 
 ![Hive3](./images/s4/Hive3.png)
 ![Hive4](./images/s4/Hive4.png)
