@@ -37,7 +37,7 @@ ssh root@localhost -p 2222 # pwd: hadoop
 cd /usr/hdp/current/kafka-broker/
 ```
 
-### Kafka incluye algunos scripts útiles para interactuar con el cluster. Por ejemplo, el script "_/usr/hdp/current/kafka-broker/bin/kafka-topics.sh_" se utiliza mucho, por ejemplo, para crear un topic.
+- Kafka incluye algunos scripts útiles para interactuar con el cluster. Por ejemplo, el script "_/usr/hdp/current/kafka-broker/bin/kafka-topics.sh_" se utiliza mucho, por ejemplo, para crear un topic.
 
 **Ejecutamos el script _kafka-topics.sh_ sin parámetros para que muestre todas las opciones que se le pueden pasar**
 ```bash
@@ -65,7 +65,7 @@ Podemos ver que la opción --zookeeper es obligatoria. En nuestro caso le pasare
 ```
 ![KafkaDescTopic](images/s3/KafkaDescTopic.png)
 
-### Kafka también incorpora algunos scripts útiles para producir y consumir mensajes del cluster.
+- Kafka también incorpora algunos scripts útiles para producir y consumir mensajes del cluster.
 
 **Ejecutamos el script _kafka-producer.sh_ sin parámetros para que muestre todas las opciones que se le pueden pasar**
 ```bash
