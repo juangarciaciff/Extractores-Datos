@@ -24,7 +24,7 @@ Iniciamos la máquina virtual de la asignatura, configurada previamente (extract
 ***
 ## Ejercicio 1: Operaciones básicas
 
-** Abrimos un terminal e iniciamos un broker kafka indicando el fichero de configuración **
+**Abrimos un terminal e iniciamos un broker kafka indicando el fichero de configuración**
 ```bash
 ssh root@localhost -p 2222 # pwd: hadoop
 cd /usr/hdp/current/kafka-broker/

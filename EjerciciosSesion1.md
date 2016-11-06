@@ -9,11 +9,11 @@
 ***
 # Ejercicio 1: Ingesta básica en HDFS
 
-Tenemos un dataset en el directorio local /root/youtube/data que es el resultado (parcial) de un crawler de Youtube (extraído de [http://netsg.cs.sfu.ca/youtubedata/](http://netsg.cs.sfu.ca/youtubedata/)).
+Tenemos un dataset en el directorio local **_/root/youtube/data_** que es el resultado (parcial) de un crawler de Youtube (extraído de [http://netsg.cs.sfu.ca/youtubedata/](http://netsg.cs.sfu.ca/youtubedata/)).
 
 El crawler deja los ficheros en carpetas que corresponden a la fecha de adquisición.
 
-Cada carpeta contiene 4 ficheros TXT (Tab delimited) con los campos: video ID, uploader, age, category, length, views, rate, ratings, comments, related ID
+Cada carpeta contiene 4 ficheros TXT (Tab delimited) con los campos: **_video ID, uploader, age, category, length, views, rate, ratings, comments, related ID_**
 
 ```bash
 ls -rlth /root/youtube/data/
